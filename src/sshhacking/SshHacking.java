@@ -66,12 +66,16 @@ public class SshHacking {
         }
         catch(JSchException d){
             System.out.println(d);
-            JOptionPane.showMessageDialog(null, "error");
+            JOptionPane.showMessageDialog(null, "Error: "+d.getMessage());
             System.exit(0);
         } catch (IOException ex) {
             Logger.getLogger(SshHacking.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Error: "+ex.getMessage());
+            System.exit(0);
         } catch (IllegalAccessException ex) {
             Logger.getLogger(SshHacking.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Error: "+ex.getMessage());
+            System.exit(0);
         }
     }
     
