@@ -1,0 +1,1 @@
+total 20n-rw-------. 1 root root  1270 abr 27 10:56 anaconda-ks.cfgn-rw-r--r--. 1 root root 15080 oct  2  2017 epel-release-7-11.noarch.rpmn
