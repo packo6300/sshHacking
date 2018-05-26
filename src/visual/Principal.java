@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import service.SSHConnector;
 /**
  *
@@ -39,10 +40,13 @@ public class Principal extends javax.swing.JFrame {
             ssh.connect(usuario, password, host, port);            
        } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error:\n"+ex.getMessage());
         } catch (JSchException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error:\n"+ex.getMessage());
         } catch (IllegalAccessException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error:\n"+ex.getMessage());
         }
     }    
     @SuppressWarnings("unchecked")
@@ -135,15 +139,25 @@ public class Principal extends javax.swing.JFrame {
             txtResult.append(d+"\n");
         } catch (IllegalAccessException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error:\n"+ex.getMessage());
         } catch (JSchException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error:\n"+ex.getMessage());
         } catch (IOException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Error:\n"+ex.getMessage());
         }
     }//GEN-LAST:event_btnComandActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-      System.exit(0);
+       try{
+           ssh.disconnect();
+           System.exit(0);
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(this, "Error:\n"+e.getMessage());
+       }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
