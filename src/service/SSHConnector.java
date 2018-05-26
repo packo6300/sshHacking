@@ -56,7 +56,7 @@ public class SSHConnector {
             throw new IllegalAccessException("Sesion SSH ya iniciada.");
         }
     }
- 
+     
     /**
      * Ejecuta un comando SSH.
      *

@@ -59,7 +59,6 @@ public class SshHacking {
                         pw.println(result);
                         System.out.print(result);
                     }
-                JOptionPane.showMessageDialog(null, "Operación realizada correctamente");
                 log.close();
                 ssh.disconnect();
                 System.exit(0);
